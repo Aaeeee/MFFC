@@ -19,6 +19,6 @@
 		</tbody>
 	</table>
 	<hr />
-	<div><?php echo $redis; ?></div>
+	<div><?php echo 'Test redis value: '.$redis; ?></div>
 </body>
 </html>

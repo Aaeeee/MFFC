@@ -20,7 +20,7 @@ class Predis{
 		}
 	}
 
-	public static function set_value($key,$value,$time=null,$unit=null){
+	public static function set($key,$value,$time=null,$unit=null){
 	    self::init();
 	    if ($time) {
 			switch ($unit) {
@@ -47,12 +47,12 @@ class Predis{
 	    }
 	}
 
-	public static function get_value($key){
+	public static function get($key){
     	self::init();
     	return self::$redis->get($key);
 	}
 
-	public static function delete_value($key){
+	public static function delete($key){
 	    self::init();
 	    return self::$redis->del($key);
 	}
@@ -65,7 +65,7 @@ class Predis{
     	self::$redis->psetex($key,$time,$value);
 	}
 
-	public static function test_redis(){
+	/*public static function test_redis(){
 		//self::init();
 		try {
 			$testClient = new Predis\Client();
@@ -77,5 +77,5 @@ class Predis{
       		return $e->getMessage();
 		}
 		
-	}
+	}*/
 }
